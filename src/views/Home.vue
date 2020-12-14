@@ -33,7 +33,7 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
-  }
+  },
 });
 </script>
 
