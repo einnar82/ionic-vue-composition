@@ -10,7 +10,7 @@
 
 <script type='ts'>
 import { IonContent } from "@ionic/vue";
-import { computed, defineComponent, reactive } from "vue";
+import { computed, defineComponent, reactive, toRefs } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 
@@ -28,7 +28,7 @@ export default defineComponent({
         return store.getters.memory(Number(memoryId));
       }),
     });
-    return { ...data };
+    return { ...toRefs(data) };
   },
 });
 </script>
