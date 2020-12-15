@@ -1,5 +1,5 @@
 <template>
-  <base-layout pageTitle="All Memories">
+  <base-layout page-title="All Memories">
     <ion-content>
       <ion-list>
         <ion-item
@@ -28,7 +28,7 @@ import {
   IonThumbnail,
   IonLabel,
 } from "@ionic/vue";
-import { computed, defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 import { useStore } from "vuex";
 
 export default defineComponent({
@@ -42,13 +42,13 @@ export default defineComponent({
     IonLabel,
   },
   setup() {
-    const store = useStore();
+    const store = useStore()
+    const memories = computed(() => {
+      return store.state.memories;
+    })
 
-     return {
-      // access a state in computed function
-      memories: computed(() => store.getters.memories)
-    }
-  },
+    return { memories }
+  }
 });
 </script>
 

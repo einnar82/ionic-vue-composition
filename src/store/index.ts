@@ -27,10 +27,9 @@ const store = createStore({
           ]
     },
     getters: {
-        memories (state) {
-          return state.memories;
-        }
-      } 
+        memories: (state) => state.memories,
+        memory: (state) => (memoryId: number) => state.memories.find((memory) => memory.id === memoryId)
+    } 
 })
 
 export default store; 
