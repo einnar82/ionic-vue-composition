@@ -9,6 +9,7 @@ import { defineComponent } from "vue";
 import { IonImg } from "@ionic/vue";
 
 export default defineComponent({
+  inheritAttrs: false,
   props: {
     title: {
       type: String,
