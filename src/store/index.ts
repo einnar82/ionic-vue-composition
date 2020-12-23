@@ -29,6 +29,20 @@ const store = createStore({
     getters: {
         memories: (state) => state.memories,
         memory: (state) => (memoryId: number) => state.memories.find((memory) => memory.id === memoryId)
+    },
+    mutations: {
+      ADD_MEMORY: (state, memoryData) => {
+        const newMemory = {
+          id: state.memories.length + 1,
+          ...memoryData
+        }
+        state.memories.unshift(newMemory) 
+      } 
+    },
+    actions: {
+      addMemory: (context, memoryData) => {
+        context.commit('ADD_MEMORY', memoryData)
+      }
     } 
 })
 
