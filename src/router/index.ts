@@ -14,7 +14,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/memories/:id',
     component: () => import('../views/MemoryDetail.vue')
-  }
+  },
+  {
+    path: '/memories/add',
+    component: () => import('../views/AddMemory.vue')
+  },
 ]
 
 const router = createRouter({

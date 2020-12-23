@@ -22,6 +22,7 @@ import {
   IonToolbar,
   IonBackButton,
   IonButtons,
+  IonHeader
 } from "@ionic/vue";
 import { defineComponent } from "vue";
 
@@ -43,6 +44,7 @@ export default defineComponent({
     IonToolbar,
     IonBackButton,
     IonButtons,
+    IonHeader
   },
 });
 </script>

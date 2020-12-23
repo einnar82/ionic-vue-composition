@@ -4,19 +4,19 @@
     page-default-back-link="/memories"
   >
     <h2 v-if="!loadedMemory">Memory not found</h2>
-    <ion-content v-else> {{ loadedMemory }} </ion-content>
+    <memory-overview v-else v-bind="{...loadedMemory}"></memory-overview>
   </base-layout>
 </template>
 
 <script type='ts'>
-import { IonContent } from "@ionic/vue";
 import { computed, defineComponent, reactive, toRefs } from "vue";
+import MemoryOverview from '@/components/memories/MemoryOverview.vue'
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 
 export default defineComponent({
   components: {
-    IonContent,
+    MemoryOverview
   },
   setup() {
     const route = useRoute();
